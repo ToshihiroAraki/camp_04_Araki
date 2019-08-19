@@ -1,0 +1,231 @@
+body{
+    width: 1000px;
+    margin: 0px auto;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: 0 0px 7px #aaa;
+}
+h1{
+    font-size: 36px;
+    text-align: center;
+}
+h2{
+    font-size: 28px;
+    text-align: center;
+    padding-top: 30px;
+}
+.dummy{
+    height: 10px;
+    width: 1000px;
+}
+legend{
+    font-size: 20px;
+    font-weight: bold;
+}
+fieldset {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: #102686ec;;
+    border-image: initial;
+}
+.message{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.menu ul {
+    display:none;
+    }
+.menu li{
+    position:relative;
+}
+.submenu {   
+    position:absolute;
+    top:30px;
+    left:10px;
+    background: #5266beec;
+    }
+.error{
+    margin: 0;
+    color: red;
+    font-weight: bold;
+}
+.header1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #102686ec;
+    box-shadow: 0 0px 7px #aaa;
+}
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+}
+li{
+    padding:10px;
+    font-size: 16px;
+    color: white;
+}
+a{
+    color: white;
+}
+.text{
+    color: blue;
+    font-size: 14px;
+    text-align: center;
+    padding-top: 10px;
+}
+.field{
+    width: 400px;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+.box{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.kintai,.yasumi{
+    width: 300px;
+    background: rgb(238, 238, 238);
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: 0 0px 7px #aaa;
+}
+.form{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.shukeihyou{
+    display: flex;
+    justify-content: center;
+}
+.message{
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+    padding-bottom: 20px;
+    line-height: 1.5;
+}
+.shift{
+    padding: 10px;
+    padding-right: 30px;
+    text-align: right;
+}
+.hyouBox{
+    width: 850px;
+    margin: 0px auto;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    background: rgb(238, 238, 238);
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: 0 0px 7px #aaa;
+}
+.hyoutop{
+    display: flex;
+    justify-content: space-around;
+}
+.left,.center,.right{
+    width: 300px;
+}
+.left,.right{
+    display:none;
+}
+.left{
+    padding-top: 50px;
+}
+.left p{
+    padding:5px;
+    padding-left: 50px;
+    font-size: 20px;
+    text-decoration: underline;
+}
+.shounin{
+    width: 60px;
+    padding:2px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 50px;
+    border: 1px solid black;
+    text-align: center;
+}
+.shouninbox{
+    width: 60px;
+    height: 60px;
+    padding:2px;
+    margin-left: auto;
+    margin-right: 50px;
+    border: 1px solid black;
+}
+table{
+    border:1;
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+input[type="date"],input[type="password"],input[type="text"],input[type="time"],select[id="bunrui"],select[id="shift"]{
+    height: 24px;
+    width: 150px;
+}
+input[type="submit"],input[type="button"]:hover{
+    cursor: pointer;
+}
+select[id="year"],select[id="month"]{
+    height: 24px;
+    width: auto;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+th{
+    font-weight: bold;
+}
+th,td{
+    padding:5px;
+    text-align: center;
+}
+.midashi{
+    width: 120px;
+    text-align: center;
+}
+
+footer{
+    padding-top: 30px;
+}
+@page {
+    size: A4;
+    margin: 0;
+  }
+@media print{
+    .header1{display:none;}
+    .header2{display:none;}
+    body{border:0;}
+    body{box-shadow:none;}
+    .hyouBox{box-shadow:none;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;}
+    .left,.right{display:inline}
+    input[name="print"]{display:none;}
+    input[name="select"]{display:none;}
+}
