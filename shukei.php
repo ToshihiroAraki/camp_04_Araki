@@ -135,33 +135,43 @@ include('include/head.php');
     <?php include('include/header.php'); 
     echo $errormessage;
     ?>
-    <div class="hyouBox">
-        <div class="hyoutop">
-            <div class="left">
-                <p><?PHP echo '所属：'.$_SESSION['busho'];?></p>
-                <p><?PHP echo '氏名：'.$_SESSION['name'];?></p>
-            </div>
-            <div class="center">
-                <h2>月別集計表</h2>
-                <div class="form">
-                    <form action="" id="monthselect" name="monthselect" method="POST"> 
-                        <select name="year"id ="year"><?php echo $optionYear; ?></select>
-                        <label for="year">年</label>  
-                        <select name="month" id="month"><?php echo $optionMonth; ?></select>
-                        <label for="month">月</label>
-                        <input type="submit" value="集計" name="select" id ="select">
-                        <input type="button" name="print" value="印刷" onClick="javascript:window.print()">
-                    </form>
+    <div class="mainbox">
+        <div class="leftbox">
+            <ul>
+                <li><a href="input.php">入力</a></li>
+                <li><a href="shukei.php">集計</a></li>
+            </ul>
+        </div>
+        <div class="rightbox">
+            <div class="hyouBox">
+                <div class="hyoutop">
+                    <div class="left">
+                        <p><?PHP echo '所属：'.$_SESSION['busho'];?></p>
+                        <p><?PHP echo '氏名：'.$_SESSION['name'];?></p>
+                    </div>
+                    <div class="center">
+                        <h2>月別集計表</h2>
+                        <div class="form">
+                            <form action="" id="monthselect" name="monthselect" method="POST"> 
+                                <select name="year"id ="year"><?php echo $optionYear; ?></select>
+                                <label for="year">年</label>  
+                                <select name="month" id="month"><?php echo $optionMonth; ?></select>
+                                <label for="month">月</label>
+                                <input type="submit" value="集計" name="select" id ="select">
+                                <input type="button" name="print" value="印刷" onClick="javascript:window.print()">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="shounin">上長印</div>
+                        <div class="shouninbox"></div>
+                    </div>
+                </div>
+                <p class="shift"><?PHP echo '勤務シフト='.$shift;?></p>
+                <div class="shukeihyou">
+                    <?php echo $s; ?>
                 </div>
             </div>
-            <div class="right">
-                <div class="shounin">上長印</div>
-                <div class="shouninbox"></div>
-            </div>
-        </div>
-        <p class="shift"><?PHP echo '勤務シフト='.$shift;?></p>
-        <div class="shukeihyou">
-            <?php echo $s; ?>
         </div>
     </div>
     <footer></footer>

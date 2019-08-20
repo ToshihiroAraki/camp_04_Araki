@@ -32,63 +32,81 @@ include('include/head.php');
 </head>
 <body>
     <?php include('include/header.php'); ?>
-    <div class="box">
-        <div class="kintai">
-            <h2>勤怠入力画面</h2>
-            <div class="form">
-                <form action="kintai_insert.php" method="POST">
-                    <table>
-                        <tr>
-                            <th><label for="date">日付　　：</label></th>
-                            <td><input type="date" id="date" name="date" required></td>
-                        </tr>
-                        <tr>
-                            <th><label for="starttime">出社時刻：</label></th>
-                            <td><input type="time" id="starttime" name="starttime" required></td>
-                        </tr>
-                        <tr>
-                            <th><label for="endtime">退社時刻：</label></th>
-                            <td><input type="time" id="endtime" name="endtime" required></td>
-                        </tr>
-                    </table>
-                    <div class="button">
-                        <input type="submit" name="touroku" id ="touroku"value="勤怠登録">
-                    </div>
-                </form>
-            </div>
-            <?PHP echo '<div class="message">'.$kanryomessage.'</div>' ; ?>
+    <div class="mainbox">
+        <div class="leftbox">
+            <ul>
+                <li><a href="input.php">入力</a></li>
+                <li><a href="shukei.php">集計</a></li>
+            </ul>
         </div>
-        <div class="yasumi">
-            <h2>休日登録画面</h2>
-            <div class="form">
-                <form action="yasumi_insert.php" method="POST">
-                    <table>
-                        <tr>
-                            <th><label for="date2">日付　　：</label></th>
-                            <td><input type="date" id="date2" name="date" required></td>
-                        </tr>
-                        <tr>
-                            <th><label for="bunrui">休日分類：</label></th>
-                            <td><select id="bunrui" name="bunrui" required>
-                            <option value="">選択してください</option>
-                            <option value="有給">有給休暇</option>
-                            <option value="忌引">忌引休暇</option>
-                            <option value="育児">育児休暇</option>
-                            <option value="結婚">結婚休暇</option>
-                            <option value="産休">出産休暇</option>
-                            </select></td>
-                        </tr>
-                        <tr>
-                            <th><label for="bikou">備考　　：</label></th>
-                            <td><input type="text" id="bikou" name="bikou"></td>
-                        </tr>
-                    </table>
-                    <div class="button">
-                        <input type="submit" name="yasumi_touroku" id ="yasumi_touroku"value="休日登録">
-                    </div>
-                </form>
+        <div class="rightbox">
+            <ul class="tab_group">
+                <li class="tab is-active">勤怠入力</li>
+                <li class="tab">休日登録</li>
+            </ul>
+            <div class="box">
+                <div class="panel is-show">
+                    <fieldset>
+                        <legend>勤怠入力画面</legend>
+                        <div class="form">
+                            <form action="kintai_insert.php" method="POST">
+                                <table>
+                                    <tr>
+                                        <th><label for="date">日付　　：</label></th>
+                                        <td><input type="date" id="date" name="date" required></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="starttime">出社時刻：</label></th>
+                                        <td><input type="time" id="starttime" name="starttime" required></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="endtime">退社時刻：</label></th>
+                                        <td><input type="time" id="endtime" name="endtime" required></td>
+                                    </tr>
+                                </table>
+                                <div class="button">
+                                    <input type="submit" name="touroku" id ="touroku"value="勤怠登録">
+                                </div>
+                            </form>
+                        </div>
+                        <?PHP echo '<div class="message">'.$kanryomessage.'</div>' ; ?>
+                    </fieldset>
+                </div>
+                <div class="panel">
+                    <fieldset>
+                        <legend>休日登録画面</legend>
+                        <div class="form">
+                            <form action="yasumi_insert.php" method="POST">
+                                <table>
+                                    <tr>
+                                        <th><label for="date2">日付　　：</label></th>
+                                        <td><input type="date" id="date2" name="date" required></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="bunrui">休日分類：</label></th>
+                                        <td><select id="bunrui" name="bunrui" required>
+                                        <option value="">選択してください</option>
+                                        <option value="有給">有給休暇</option>
+                                        <option value="忌引">忌引休暇</option>
+                                        <option value="育児">育児休暇</option>
+                                        <option value="結婚">結婚休暇</option>
+                                        <option value="産休">出産休暇</option>
+                                        </select></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="bikou">備考　　：</label></th>
+                                        <td><input type="text" id="bikou" name="bikou"></td>
+                                    </tr>
+                                </table>
+                                <div class="button">
+                                    <input type="submit" name="yasumi_touroku" id ="yasumi_touroku"value="休日登録">
+                                </div>
+                            </form>
+                        </div>
+                        <?PHP echo '<div class="message">'.$tourokumessage.'</div>' ; ?>
+                    </fieldset>
+                </div>
             </div>
-            <?PHP echo '<div class="message">'.$tourokumessage.'</div>' ; ?>
         </div>
     </div>
     <footer></footer>

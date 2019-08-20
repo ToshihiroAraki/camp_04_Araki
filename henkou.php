@@ -116,5 +116,7 @@ include('include/head.php');
     </form>
     </div>
     <footer></footer>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/test.js"></script>
 </body>
 </html>

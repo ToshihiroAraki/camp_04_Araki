@@ -52,10 +52,8 @@ include('include/head.php');
     <title>ログイン画面</title>
 </head>
 <body>
-    <h1>勤怠管理システム</h1>
-    <header class="header2">
+    <h1>社内ポータル</h1>
         <div class="dummy"></div>
-    </header>
     <h2>ログイン画面</h2>
         <form id="loginForm" name="loginForm" action="" method="POST">
             <div class="field">
