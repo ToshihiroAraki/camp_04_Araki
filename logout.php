@@ -14,7 +14,7 @@ include('include/head.php');
     <title>ログアウト</title>
 </head>
 <body>
-    <h1>勤怠管理システム</h1>
+    <h1>Portal system</h1>
     <header class="header2">
         <div class="dummy"></div>
     </header>

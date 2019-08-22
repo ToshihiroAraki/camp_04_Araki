@@ -158,7 +158,7 @@ include('include/head.php');
                                 <select name="month" id="month"><?php echo $optionMonth; ?></select>
                                 <label for="month">月</label>
                                 <input type="submit" value="集計" name="select" id ="select">
-                                <input type="button" name="print" value="印刷" onClick="javascript:window.print()">
+                                <input type="button" class="insatu"name="print" value="印刷" >
                             </form>
                         </div>
                     </div>

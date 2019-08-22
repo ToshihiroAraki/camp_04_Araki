@@ -10,17 +10,29 @@ body{
 h1{
     font-size: 36px;
     text-align: center;
-    padding-top: 10px;
+    color: #091d77ec;
+    font-family: Impact;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    text-shadow: 1px 1px 10px rgb(50, 95, 243), 
+                 0 0 5em rgb(23, 24, 24),
+                 0 0 0.2em rgb(67, 223, 210);
 }
 h2{
     font-size: 28px;
     text-align: center;
     padding-top: 30px;
+    padding-bottom: 15px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 .dummy{
     height: 10px;
     width: 1000px;
-    background-color: #102686ec;
+    background: linear-gradient(#04035f, #44338f 49%, #13075a 50%);
 }
 legend{
     font-size: 20px;
@@ -39,11 +51,6 @@ fieldset {
     border-color: #565656;
     border-image: initial;
     border-radius: 10px;
-}
-.message{
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 /* ここから課題04編集 */
 .dropdown{
@@ -66,9 +73,16 @@ ul{
     cursor: pointer;
     font-size: 16px;
 }
+.dropdown li a{
+    width: 100%;
+    padding: 5px 0;
+    margin: -5px 0px -5px 0px;
+    display: block;
+    color: #fff;
+}
 .dropdown>li{
     margin: 1px;
-    background: #102896ec;
+    background: linear-gradient(#04035f, #44338f 49%, #13075a 50%);
     display: inline;
 }
 .dropdown_menu{
@@ -78,7 +92,7 @@ ul{
     margin-left: -5px;
     margin-top: 5px;
     padding: 0;
-    background: #7ba5ff;
+    background: #7ba5ff96;
 }
 
 .dropdown_menu li{
@@ -98,66 +112,66 @@ li a:hover{
 /* ここからinput.phpのタブ */
 .tab_group{
     max-width: 700px;
-    padding-top: 25px;
+    margin-top: 25px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    /* border: 1px solid black; */
+    border-bottom: 0;
 }
 .tab{
     width: 100%;
-    color: #d9d9d9;
+    color: #565656;
     padding: 2px;
     font-size: 16px;
-    border: 1px solid #102896ec;
-    border-radius: 15px 15px 0px 0px/30px 30px 0px 0px;
+    border: 1px solid rgb(238, 238, 238);
+    /* border-radius: 15px 15px 0px 0px/30px 30px 0px 0px; */
     list-style:none;
     text-align:center;
     cursor:pointer;
-    background: #565656;
+    background: white;
+    border: 1px solid black;
+    border-bottom: 2px solid black;
+
 }
 .panel-group{
     height:100px;
-    border:solid 1px #CCC;
+    /* border:solid 1px #CCC; */
     border-top:none;
     background:#eee;
 }
 
 .tab.is-active{
-    background:#d9d9d9;
-    border: 1px solid #102896ec;
-    border-bottom: 1px solid #d9d9d9;
+    background:rgb(238, 238, 238);
+    /* border: 1px solid #102896ec; */
+    /* border-bottom: 1px solid #d9d9d9; */
     color:#565656;
     transition: all 0.2s ease-out;
+    font-weight: bold;
+    border: 2px solid black;
+    border-bottom: 0;
 }
 
 .box{
     margin: 0 auto;
-    width: 700px;
+    width: 696px;
     display: flex;
     justify-content: space-evenly;
-    background:#d9d9d9;
-    border: 1px solid #102896ec;
-    border-top: 1px solid #d9d9d9;
-    border-radius: 0px 0px 20px 20px;
+    background:rgb(238, 238, 238);
+    border: 2px solid black;
+    border-top: 0;
 }
 .panel{
     display:none;
 }
 .panel.is-show{
     display:block;
-    width: 300px;
-    margin-top: 30px;
+    /* width: 300px; */
+    margin-top: 10px;
     margin-bottom: 30px;
-    /* background: #d9d9d9;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    border-top: 0;
-    border-bottom: 0;
-    box-shadow: 0 0px 7px #aaa; */
 }
 
 .form{
-    margin-top: 30px;
     display: flex;
     justify-content: center;
 }
@@ -166,14 +180,34 @@ li a:hover{
 }
 .leftbox{
     margin: 0 auto;
-    margin-top: 25px;
+    margin-top: 30px;
     width: 200px;
-    height: 500px;
-    background: pink;
+    height: 100%;
+    border: 2px outset #102896ec; 
+    border-radius: 7px;
+    box-shadow: 3px 3px 7px 2px #aaa;
+}
+.leftbox li{
+    margin: 5px 0px 5px 0px;
+    width: 100%;
+
+}
+.leftbox a{
+    color: #102896ec;
+    line-height: 20px;
+    padding: 5px 0;
+    display: block;
+    font-weight: bold;
 }
 .rightbox{
     width: 750px;
     margin: 0 auto;
+    margin-top: 30px;
+    padding-bottom: 25px;
+    border: 2px outset #102896ec; 
+    border-radius: 7px;
+    box-shadow: 3px 3px 7px 2px #aaa;
+    
 }
 /* ここまで課題04編集 */
 .error{
@@ -196,6 +230,7 @@ li a:hover{
     font-size: 14px;
     text-align: center;
     padding-top: 10px;
+    padding-bottom: 20px;
 }
 .field{
     width: 400px;
@@ -222,7 +257,7 @@ li a:hover{
 .hyouBox{
     width: 700px;
     margin: 0px auto;
-    margin-top: 30px;
+    margin-top: 20px;
     padding-bottom: 30px;
     background: rgb(238, 238, 238);
     border: 1px solid #ccc;
@@ -275,6 +310,10 @@ input[type="date"],input[type="password"],input[type="text"],input[type="time"],
     height: 24px;
     width: 150px;
 }
+.button input[type="submit"]{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
 input[type="submit"],input[type="button"]:hover{
     cursor: pointer;
 }
@@ -282,13 +321,37 @@ select[id="year"],select[id="month"]{
     height: 24px;
     width: auto;
 }
+.bunrui{
+    font-size: 14px;
+}
 .button{
     display: flex;
     justify-content: center;
     text-align: center;
 }
+#title,#naiyou{
+    width: 100%;
+}
 th{
     font-weight: bold;
+}
+.th_title,.th_date,.th_name{
+    width: 110px;
+}
+.th_file{
+    width: 70px;
+}
+.th_naiyou{
+    width: 300px;
+}
+.panel tr{
+    border-bottom: 1px solid black;
+    line-height: 20px;
+}
+.ichiran table{
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 th,td{
     padding:5px;
@@ -302,7 +365,7 @@ th,td{
 footer{
     margin-top: 30px;
     height: 10px;
-    background: #102896ec;
+    background: linear-gradient(#04035f, #44338f 49%, #13075a 50%);
 }
 @page {
     size: A4;
@@ -311,12 +374,23 @@ footer{
 @media print{
     .header1{display:none;}
     .header2{display:none;}
+    .leftbox{display:none;}
+    .rightbox{
+        border: 0;
+        box-shadow:none;}
+    .dropdown{display:none;}
     body{border:0;}
     body{box-shadow:none;}
     .hyouBox{box-shadow:none;
+        width: auto;
+        box-shadow:none;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;}
     .left,.right{display:inline}
     input[name="print"]{display:none;}
     input[name="select"]{display:none;}
+}
+img{
+    width: 20px;
+    height: 20px;
 }

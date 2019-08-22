@@ -22,3 +22,16 @@ jQuery(function($){
         $('.panel').eq(index).addClass('is-show');
     });
 }); 
+
+//pass忘れメッセージ
+$('.text').on('click', function() {
+  alert("システム管理者にお問い合わせ下さい（内線:1234）");
+});
+$('.text').hover(function() {
+    $('.text').css('cursor','pointer');
+  });
+
+//印刷button
+$('.insatu').on('click', function() {
+    window.print();
+  });

@@ -52,7 +52,7 @@ include('include/head.php');
     <title>ログイン画面</title>
 </head>
 <body>
-    <h1>社内ポータル</h1>
+    <h1>Portal system</h1>
         <div class="dummy"></div>
     <h2>ログイン画面</h2>
         <form id="loginForm" name="loginForm" action="" method="POST">
@@ -75,7 +75,7 @@ include('include/head.php');
                     <div class="button">
                         <input type="submit" id="login" name="login" value="ログイン">
                     </div>
-                    <p class="text"><a href="#" class="text" id="text" onclick="document.getElementById('text').innerHTML='管理者にお問い合わせ下さい（内線:1234）';">パスワードを忘れた方はこちら</a></p>
+                    <p class="text">パスワードを忘れた方はこちら</p>
                 </fieldset>
             </div>
         </form>
@@ -91,5 +91,7 @@ include('include/head.php');
             </div>
         </form>
     <footer></footer>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/test.js"></script>
 </body>
 </html>
