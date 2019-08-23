@@ -7,23 +7,29 @@ $errormessage = "";
 $signUpmessage = "";
 // ログインボタンが押された場合
 if (isset($_POST["toukou"])) {
-    $filename = $_FILES['upfile']['tmp_name'];
 
-    var_dump($filename);
-    var_dump($_POST["upfile"]);
     if (!empty($_POST["bunrui"]) && !empty($_POST["title"]) && !empty($_POST["naiyou"])) {
         // 入力したユーザIDとパスワードを格納
         $bunrui = $_POST["bunrui"];
         $title = $_POST["title"];
         $naiyou = $_POST["naiyou"];
         $name = $_SESSION['name'];
-        //fileがあるときだけ下記
+        //添付fileがあるときだけ下記実行
         if(!empty($_FILES['upfile']['tmp_name'])){
-            $filepass = fopen($_FILES['upfile']['tmp_name'], "rb");
-            $pdf = fread($filepass, filesize($_FILES['upfile']['tmp_name']));
-            fclose($fp);
+            // $filepass = fopen($_FILES['upfile']['tmp_name'], "rb");
+            // echo "<br>";
+            // var_dump($filepass);
+            // $pdf = fread($filepass, filesize($_FILES['upfile']['tmp_name']));
+            // fclose($filepass);
+            $filename = $_FILES['upfile']['name'];
+            $storeDir = 'upload/';
+            $new_filename = uniqid().$filename;
+            //一時フォルダからC:\xampp\htdocs\camp_04_Araki.git\uploadのフォルダに移動させる
+            //DBにはその保存nameを入れておき、selectした後にダウンロードさせる。
+            move_uploaded_file($_FILES['upfile']['tmp_name'], $storeDir.$new_filename);
+            $pdf = $new_filename;
         }else{
-            $pdf = "NULL";
+            $pdf = "";
         }
 
         try {
@@ -68,7 +74,7 @@ include('include/head.php');
                         </div>
                         <table>
                             <tr>
-                                <th><label for="bunrui">分類　　：</label></th>
+                                <th><label for="bunrui"> 分　類 ：</label></th>
                                 <td><input type="radio" name="bunrui" id="osirase" value="お知らせ" checked>
                                     <label class="bunrui" for="osirase">お知らせ</label>
                                     <input type="radio" name="bunrui" id="zirei" value="辞令発令">
@@ -82,7 +88,7 @@ include('include/head.php');
                                 <td><input type="text" id="title" name="title" placeholder="タイトルを入力" value="" required></td>
                             </tr>
                             <tr>
-                                <th><label for="naiyou">内容　　：</label></th>
+                                <th><label for="naiyou"> 内　容 ：</label></th>
                                 <td><textarea id="naiyou" name="naiyou" rows="5" placeholder="" value="" required></textarea></td>
                             </tr>
                             <tr>

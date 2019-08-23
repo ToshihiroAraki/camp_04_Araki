@@ -7,7 +7,7 @@ try{
     exit('DbConnectError:'.$e->getMessage());
     }
     //[お知らせ]取得
-$stmt = $pdo->prepare("SELECT * FROM board_table WHERE bunrui ='お知らせ' order by indate desc;");
+$stmt = $pdo->prepare("SELECT * FROM board_table WHERE bunrui ='お知らせ' order by indate desc LIMIT 15;");
 $status = $stmt->execute();
 if($status==false){
     $errormessage = $stmt->errorInfo();
@@ -26,7 +26,7 @@ if($status==false){
     $view_A .= $result["name"];
     $view_A .="</td><td>";
 if(!empty($result["file"])){
-    $view_A .= '<img src="img/pdf2.png" alt="">';
+    $view_A .= '<a href="upload/'.$result["file"].'"target="_blank"><img src="img/pdf3.jpg" alt=""></a>';
 }else{
     $view_A .="";
 }
@@ -54,7 +54,11 @@ if($status==false){
     $view_B .="</td><td>";
     $view_B .= $result["name"];
     $view_B .="</td><td>";
-    $view_B .= $result["file"];
+    if(!empty($result["file"])){
+        $view_B .= '<a href="upload/'.$result["file"].'"target="_blank"><img src="img/pdf3.jpg" alt=""></a>';
+    }else{
+        $view_B .="";
+    }
     $view_B .="</td></tr>";        
     }
     $view_B .="</table>";
@@ -78,7 +82,11 @@ if($status==false){
     $view_C .="</td><td>";
     $view_C .= $result["name"];
     $view_C .="</td><td>";
-    $view_C .= $result["file"];
+    if(!empty($result["file"])){
+        $view_C .= '<a href="upload/'.$result["file"].'"target="_blank"><img src="img/pdf3.jpg" alt=""></a>';
+    }else{
+        $view_C .="";
+    }
     $view_C .="</td></tr>";        
     }
     $view_C .="</table>";
@@ -99,6 +107,7 @@ include('include/head.php');
                 </ul>
             </div>
             <div class="rightbox">
+                <h3>掲示板</h3>
                 <ul class="tab_group">
                     <li class="tab is-active">お知らせ</li>
                     <li class="tab">辞令発令</li>

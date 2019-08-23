@@ -22,8 +22,13 @@ h1{
 h2{
     font-size: 28px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 15px;
+}
+h3{
+    font-size: 28px;
+    text-align: center;
+    padding-top: 20px;
 }
 a{
     text-decoration: none;
@@ -37,20 +42,23 @@ a{
 legend{
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    border: 2px outset #102896ec; 
+    border-radius: 7px;
+    background: white;
+    box-shadow: 3px 3px 7px 2px #aaa;
 }
 fieldset {
     display: block;
-    margin-inline-start: 2px;
-    margin-inline-end: 2px;
-    padding-block-start: 0.35em;
-    padding-left: 0.75em;
-    padding-inline-end: 0.75em;
-    min-inline-size: min-content;
-    border-width: 2px;
-    border-style: outset;
-    border-color: #565656;
-    border-image: initial;
-    border-radius: 10px;
+    margin: 0px auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    background: rgb(238, 238, 238);
+    border: 1px solid #ccc;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: 0 0px 7px #aaa;
 }
 /* ここから課題04編集 */
 .dropdown{
@@ -65,7 +73,7 @@ ul{
     color: #fff;
 }
 .dropdown li{
-    max-width: calc(1000px/4);
+    max-width: calc(1000px/3);
     width: 100%;
     position: relative;
     padding: 5px;
@@ -214,6 +222,7 @@ li a:hover{
     margin: 0;
     color: red;
     font-weight: bold;
+    text-align: center;
 }
 .header1{
     display: flex;
@@ -389,6 +398,9 @@ footer{
     .left,.right{display:inline}
     input[name="print"]{display:none;}
     input[name="select"]{display:none;}
+}
+#select{
+    display: none;
 }
 img{
     width: 20px;

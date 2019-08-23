@@ -39,37 +39,31 @@ for($i=1;$i<=12; $i++) {
 }
 //選択フォーム関連ここまで
 
-//祝日データ取得
+//DB接続
 try{
     $pdo = new PDO('mysql:dbname=kadai03_db;charset=utf8;host=localhost','root','');
     } catch (PDOException $e) {
     exit('DbConnectError:'.$e->getMessage());
     }
+//祝日データ取得
 $stmt_holiday = $pdo->prepare("SELECT * FROM holiday_table");
 $status = $stmt_holiday->execute();
 $result_holidayarray = $stmt_holiday->fetchall(PDO::FETCH_ASSOC);
 $holidayarray = array_column($result_holidayarray, 'date');
 //祝日ここまで
+
 //有給データ取得
-try{
-    $pdo = new PDO('mysql:dbname=kadai03_db;charset=utf8;host=localhost','root','');
-    } catch (PDOException $e) {
-    exit('DbConnectError:'.$e->getMessage());
-    }
 $stmt_yasumi = $pdo->prepare("SELECT * FROM yasumi_table WHERE id = $id");
 $status = $stmt_yasumi->execute();
 $result_yasumiarray = $stmt_yasumi->fetchall(PDO::FETCH_ASSOC);
 $yasumiarray = array_column($result_yasumiarray, 'date');
 //有給ここまで
+
 $weekday = array('日','月','火','水','木','金','土');//曜日配列セット
+
 // 集計ボタン押されたらスタート
 if(isset($_POST["select"])){
     $date = "'".$_POST["year"] .'-'.'0'.$_POST["month"].'%'."'";}
-try{
-    $pdo = new PDO('mysql:dbname=kadai03_db;charset=utf8;host=localhost','root','');
-    } catch (PDOException $e) {
-    exit('DbConnectError:'.$e->getMessage());
-    }
 $stmt = $pdo->prepare("SELECT * FROM kintai_table WHERE id = $id AND date LIKE $date");
 $status = $stmt->execute();
 $zangyo_sum = '00:00:00';//時間外合計リセット

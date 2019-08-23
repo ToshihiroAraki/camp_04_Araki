@@ -31,7 +31,17 @@ $('.text').hover(function() {
     $('.text').css('cursor','pointer');
   });
 
+//集計表の年、月選んだら自動送信
+$('#year').bind('change', function() {
+  $('#select')[0].click();
+});
+$('#month').bind('change', function() {
+  $('#select')[0].click();
+});
+
 //印刷button
 $('.insatu').on('click', function() {
     window.print();
   });
+
+

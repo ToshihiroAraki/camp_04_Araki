@@ -69,7 +69,7 @@ include('include/head.php');
                                 </div>
                             </form>
                         </div>
-                        <?PHP echo '<div class="message">'.$kanryomessage.'</div>' ; ?>
+                        <?PHP echo '<div class="message">'.$kanryomessage.$tourokumessage.'</div>' ; ?>
                     </fieldset>
                 </div>
                 <div class="panel">
@@ -103,7 +103,7 @@ include('include/head.php');
                                 </div>
                             </form>
                         </div>
-                        <?PHP echo '<div class="message">'.$tourokumessage.'</div>' ; ?>
+                        <?PHP echo '<div class="message">'.$kanryomessage.$tourokumessage.'</div>' ; ?>
                     </fieldset>
                 </div>
             </div>

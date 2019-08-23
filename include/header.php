@@ -9,8 +9,8 @@
         <ul class="dropdown">
           <li><a href="main.php">TOP</a>
             <ul class="dropdown_menu">
-              <li><a href="board_insert.php">入力</a></li>
               <li><a href="main.php">掲示板</a></li>
+              <li><a href="board_insert.php">投稿</a></li>
             </ul>
           </li>
           <li><a href="input.php">勤怠管理</a>
@@ -19,7 +19,6 @@
               <li><a href="shukei.php">集計</a></li>
             </ul>
           </li>
-          <li>会議室予約</li>
           <li><a href="#">ユーザー</a>
             <ul class="dropdown_menu">
               <li><a href="henkou.php">情報変更</a></li>

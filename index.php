@@ -32,7 +32,7 @@ if(isset($_POST["login"])){
                     $_SESSION["busho"] = $row['busho'];
                     $_SESSION["shift"] = $row['shift'];
                     $_SESSION["password"] = $password;
-                    header("Location: input.php");  // input画面へ遷移
+                    header("Location: main.php");  // input画面へ遷移
                     exit();  // 処理終了
                 } else {
                     // 認証失敗

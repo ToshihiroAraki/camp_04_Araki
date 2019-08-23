@@ -36,7 +36,7 @@ if(isset($_POST["signUp"])){
             $errormessage = $stmt->errorInfo();
             exit("QueryError:".$errormessage[2]);
         }else{
-        $signUpmessage = '変更が完了しました。変更後の登録情報はこちらです。'; 
+        $signUpmessage = '変更が完了しました。<br>変更後の登録情報はこちらです。'; 
         }
     }
 }
@@ -109,7 +109,7 @@ include('include/head.php');
                     </tr>
                 </table>
                 <div class="button">
-                    <input type="submit" id="signUp" name="signUp" value="新規登録">
+                    <input type="submit" id="signUp" name="signUp" value="変更送信">
                 </div>
             </fieldset>
         </div>
